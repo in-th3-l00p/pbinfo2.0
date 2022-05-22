@@ -1,0 +1,28 @@
+header .carousel {
+    img {
+        object-fit: cover;
+        width: 100vw;
+        height: 30vh;
+        filter: brightness(50%);
+
+        @media screen and (max-height: 480px) {
+            height: 40vh; 
+        }
+
+        @media screen and (max-height: 315px) {
+            height: 60vh;
+        }
+    }
+
+    .caption {
+        h1 {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    }
+}
