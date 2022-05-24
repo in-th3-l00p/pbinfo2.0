@@ -25,15 +25,13 @@ def getProblemHashes():
         directories = directories[:len(directories) - 2] + "]"
     return directories
 
-@app.route("/getProblemInformations")
-def getProblemInformations():
-    hash = request.args.get("hash")
+#for simplifying
+def grabFile(hash, fileName):
     if not(hash): #if no hash is given
         resp = make_response("no hash", 400)
         return resp
-
     try: #trying to read the content of the "problem.json" of the given hash
-        with open(os.path.join(problemsPath, hash, "problem.json"), "r") as stream:
+        with open(os.path.join(problemsPath, hash, fileName), "r") as stream:
             stream.seek(0, os.SEEK_END)
             size = stream.tell()
             stream.seek(0, os.SEEK_SET)
@@ -43,6 +41,17 @@ def getProblemInformations():
     except FileNotFoundError:
         resp = make_response("bad hash", 404)
         return resp
+
+@app.route("/getProblemInformations")
+def getProblemInformations():
+    hash = request.args.get("hash")
+    return grabFile(hash, "problem.json")
+
+@app.route("/getProblemStatement")
+@cross_origin()
+def getProblemStatement():
+    hash = request.args.get("hash")
+    return grabFile(hash, "statement.md")
 
 @app.route("/evaluate", methods=["POST"])
 def evaluate():

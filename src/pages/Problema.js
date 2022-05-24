@@ -1,46 +1,57 @@
+import React, { useState, useEffect } from 'react';
+import showdown from 'showdown';
 import TextBox from "../components/TextBox"
 import { useParams } from 'react-router-dom';
 import { Form, Button } from "react-bootstrap"
+import Loading from '../components/Loading';
 import "../style/problema.scss"
 
 export default function Problema() {
     let { id } = useParams()
+    const [title, setTitle] = useState(undefined)
+    const [statement, setStatement] = useState(undefined)
+    const [error, setError] = useState(false)
+
+    //URLs declared as constants for better access
+    const searchParams = new URLSearchParams({ hash: id })
+    const infoURL = (
+        "http://localhost:5000/getProblemInformations?" + searchParams
+    )
+    const statementURL = (
+        "http://localhost:5000/getProblemStatement?" + searchParams
+    )
+
+    //fetchinggg
+    useEffect(() => {
+        //grabbing informations and statement
+        fetch(infoURL)
+            .then(resp => resp.json())
+            .then(info => setTitle(info.title))
+            .catch(err => setError(err))
+        fetch(statementURL)
+            .then(resp => resp.text())
+            .then(statement => {
+                //parsing the markdown
+                var converter = new showdown.Converter();
+                setStatement(converter.makeHtml(statement))
+            })
+            .catch(err => {console.log(err); setError(err)})
+    }, [])
+    console.log(title, statement)
+
+    if (error)
+        return (
+            <h1 className="mt-5 text-center font-weight-bold">
+                Eroare in afisarea problemelor
+            </h1>
+        )
+    if (!title)
+        return <Loading />
+
     return (
         <TextBox className="my-3">
-            <h2 className="text-center text-decoration-underline">Titlu</h2>
-            <div className="statement">
-                <h3>Cerinta:</h3>
-                <p>
-                    <span>Lorem ipsum dolor sit amet.</span>
-                    <span>Animi rem repellendus hic autem?</span>
-                    <span>Necessitatibus modi rerum nesciunt quae?</span>
-                    <span>Neque nisi libero magni facilis.</span>
-                    <span>Quisquam quos numquam aliquam doloribus.</span>
-                    <span>Perferendis, ad aliquid. Mollitia, ipsum!</span>
-                    <span>Ducimus debitis voluptatibus delectus nisi.</span>
-                    <span>Veritatis quaerat in pariatur ipsa.</span>
-                    <span>Quos voluptatibus quasi delectus obcaecati?</span>
-                    <span>Sed voluptate sint minus maiores.</span>
-                    <span>Lorem ipsum dolor sit amet.</span>
-                    <span>Animi rem repellendus hic autem?</span>
-                    <span>Necessitatibus modi rerum nesciunt quae?</span>
-                    <span>Neque nisi libero magni facilis.</span>
-                    <span>Quisquam quos numquam aliquam doloribus.</span>
-                    <span>Perferendis, ad aliquid. Mollitia, ipsum!</span>
-                    <span>Ducimus debitis voluptatibus delectus nisi.</span>
-                    <span>Veritatis quaerat in pariatur ipsa.</span>
-                    <span>Quos voluptatibus quasi delectus obcaecati?</span>
-                    <span>Sed voluptate sint minus maiores.</span>
-                </p>
-            </div>
-            <div className="restrictions">
-                <h3>Restrictii:</h3>
-                <ul>
-                    <li><pre>{"n < 100"}</pre></li>
-                    <li><pre>{"0 <= a[i] <= 2^32 - 1"}</pre></li>
-                </ul>
-            </div>
-
+            <h2 className="text-center text-decoration-underline">{title}</h2>
+            <div className="statement" dangerouslySetInnerHTML={{__html: statement}} />
             <div className="code">
                 <h3>Sursa:</h3>
                 <Form.Control 
