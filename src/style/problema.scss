@@ -1,0 +1,20 @@
+$input_backgroundColor: #1f2528;
+$input_borderColor: #333637;
+
+.restrictions ul {
+    list-style-type: none;
+    pre {
+        font-size: 1.125rem;
+    }
+}
+
+.codeInput {
+    color: white;
+    background-color: $input_backgroundColor;
+    border: 1px solid $input_borderColor;
+
+    &:focus {
+        color: white;
+        background-color: $input_backgroundColor;
+    }
+}

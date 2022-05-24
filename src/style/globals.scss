@@ -11,8 +11,45 @@ $bg-color: #272d31;
 
 body {
     background-color: $bg-color;
-    h1, h2, h3, h4, h5, h6, p, span {
+    h1, h2, h3, h4, h5, h6, p, span, pre {
         font-family: 'Noto Sans Mono', monospace;
         color: white;
+    }
+}
+
+@keyframes btnHover {
+    from {
+        color: white;
+        background-color: #212529;
+    } 
+    to {
+        color: #212529;
+        background-color: white;
+    }
+}
+
+.darkBtn {
+    animation: btnHover 0.5s;
+    animation-direction: reverse;
+    color: white;
+    background-color: #212529;
+
+    &:hover {
+        animation: btnHover 0.5s;
+        color: #212529;
+        background-color: white;
+    }
+}
+
+.darkerBtn {
+    animation: btnHover 0.5s;
+    animation-direction: reverse;
+    color: white;
+    background-color: #17191c;
+
+    &:hover {
+        animation: btnHover 0.5s;
+        color: #17191c;
+        background-color: white;
     }
 }

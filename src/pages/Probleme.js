@@ -9,7 +9,7 @@ function Problem({title="Titlu", description="hello world!"}) {
                 <h2>{title}</h2>
                 <p>{description}</p>
             </div>
-            <Button variant="dark" className="solveBtn m-2">Rezolva</Button>
+            <Button variant="dark" className="darkerBtn m-2">Rezolva</Button>
         </Container>
     )
 }
