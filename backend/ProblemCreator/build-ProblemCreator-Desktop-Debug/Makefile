@@ -166,30 +166,6 @@ ProblemCreator_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProblemCreator.dir/build.make CMakeFiles/ProblemCreator.dir/ProblemCreator_autogen/mocs_compilation.cpp.s
 .PHONY : ProblemCreator_autogen/mocs_compilation.cpp.s
 
-addtaskdialog.o: addtaskdialog.cpp.o
-.PHONY : addtaskdialog.o
-
-# target to build an object file
-addtaskdialog.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProblemCreator.dir/build.make CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.o
-.PHONY : addtaskdialog.cpp.o
-
-addtaskdialog.i: addtaskdialog.cpp.i
-.PHONY : addtaskdialog.i
-
-# target to preprocess a source file
-addtaskdialog.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProblemCreator.dir/build.make CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.i
-.PHONY : addtaskdialog.cpp.i
-
-addtaskdialog.s: addtaskdialog.cpp.s
-.PHONY : addtaskdialog.s
-
-# target to generate assembly for a file
-addtaskdialog.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProblemCreator.dir/build.make CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.s
-.PHONY : addtaskdialog.cpp.s
-
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -238,6 +214,30 @@ mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProblemCreator.dir/build.make CMakeFiles/ProblemCreator.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
+testdialog.o: testdialog.cpp.o
+.PHONY : testdialog.o
+
+# target to build an object file
+testdialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProblemCreator.dir/build.make CMakeFiles/ProblemCreator.dir/testdialog.cpp.o
+.PHONY : testdialog.cpp.o
+
+testdialog.i: testdialog.cpp.i
+.PHONY : testdialog.i
+
+# target to preprocess a source file
+testdialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProblemCreator.dir/build.make CMakeFiles/ProblemCreator.dir/testdialog.cpp.i
+.PHONY : testdialog.cpp.i
+
+testdialog.s: testdialog.cpp.s
+.PHONY : testdialog.s
+
+# target to generate assembly for a file
+testdialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProblemCreator.dir/build.make CMakeFiles/ProblemCreator.dir/testdialog.cpp.s
+.PHONY : testdialog.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -251,15 +251,15 @@ help:
 	@echo "... ProblemCreator_autogen/mocs_compilation.o"
 	@echo "... ProblemCreator_autogen/mocs_compilation.i"
 	@echo "... ProblemCreator_autogen/mocs_compilation.s"
-	@echo "... addtaskdialog.o"
-	@echo "... addtaskdialog.i"
-	@echo "... addtaskdialog.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... mainwindow.o"
 	@echo "... mainwindow.i"
 	@echo "... mainwindow.s"
+	@echo "... testdialog.o"
+	@echo "... testdialog.i"
+	@echo "... testdialog.s"
 .PHONY : help
 
 

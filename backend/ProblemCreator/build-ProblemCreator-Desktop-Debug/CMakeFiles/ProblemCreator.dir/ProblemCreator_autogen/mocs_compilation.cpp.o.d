@@ -1,7 +1,7 @@
 CMakeFiles/ProblemCreator.dir/ProblemCreator_autogen/mocs_compilation.cpp.o: \
  /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/build-ProblemCreator-Desktop-Debug/ProblemCreator_autogen/mocs_compilation.cpp \
  /usr/include/stdc-predef.h \
- /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/build-ProblemCreator-Desktop-Debug/ProblemCreator_autogen/EWIEGA46WW/moc_addtaskdialog.cpp \
+ /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/build-ProblemCreator-Desktop-Debug/ProblemCreator_autogen/EWIEGA46WW/moc_mainwindow.cpp \
  /usr/include/c++/11.2.0/memory \
  /usr/include/c++/11.2.0/bits/stl_algobase.h \
  /usr/include/c++/11.2.0/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -102,8 +102,9 @@ CMakeFiles/ProblemCreator.dir/ProblemCreator_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/11.2.0/bits/atomic_base.h \
  /usr/include/c++/11.2.0/bits/atomic_lockfree_defines.h \
  /usr/include/c++/11.2.0/backward/auto_ptr.h \
- /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/build-ProblemCreator-Desktop-Debug/ProblemCreator_autogen/EWIEGA46WW/../../../ProblemCreator/addtaskdialog.h \
- /usr/include/qt/QtWidgets/QDialog /usr/include/qt/QtWidgets/qdialog.h \
+ /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/build-ProblemCreator-Desktop-Debug/ProblemCreator_autogen/EWIEGA46WW/../../../ProblemCreator/mainwindow.h \
+ /usr/include/qt/QtWidgets/QMainWindow \
+ /usr/include/qt/QtWidgets/qmainwindow.h \
  /usr/include/qt/QtWidgets/qtwidgetsglobal.h \
  /usr/include/qt/QtGui/qtguiglobal.h /usr/include/qt/QtCore/qglobal.h \
  /usr/include/c++/11.2.0/cstddef /usr/include/assert.h \
@@ -224,8 +225,27 @@ CMakeFiles/ProblemCreator.dir/ProblemCreator_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt/QtGui/qfontinfo.h \
  /usr/include/qt/QtWidgets/qsizepolicy.h /usr/include/qt/QtGui/qcursor.h \
  /usr/include/qt/QtGui/qkeysequence.h \
- /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/build-ProblemCreator-Desktop-Debug/ProblemCreator_autogen/EWIEGA46WW/moc_mainwindow.cpp \
- /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/build-ProblemCreator-Desktop-Debug/ProblemCreator_autogen/EWIEGA46WW/../../../ProblemCreator/mainwindow.h \
- /usr/include/qt/QtWidgets/QMainWindow \
- /usr/include/qt/QtWidgets/qmainwindow.h \
- /usr/include/qt/QtWidgets/qtabwidget.h /usr/include/qt/QtGui/qicon.h
+ /usr/include/qt/QtWidgets/qtabwidget.h /usr/include/qt/QtGui/qicon.h \
+ /usr/include/qt/QtWidgets/QListWidget \
+ /usr/include/qt/QtWidgets/qlistwidget.h \
+ /usr/include/qt/QtWidgets/qlistview.h \
+ /usr/include/qt/QtWidgets/qabstractitemview.h \
+ /usr/include/qt/QtWidgets/qabstractscrollarea.h \
+ /usr/include/qt/QtWidgets/qframe.h \
+ /usr/include/qt/QtCore/qabstractitemmodel.h \
+ /usr/include/qt/QtCore/qvariant.h /usr/include/qt/QtCore/qmap.h \
+ /usr/include/qt/QtCore/qitemselectionmodel.h \
+ /usr/include/qt/QtCore/qset.h \
+ /usr/include/qt/QtWidgets/qabstractitemdelegate.h \
+ /usr/include/qt/QtWidgets/qstyleoption.h \
+ /usr/include/qt/QtCore/qlocale.h \
+ /usr/include/qt/QtWidgets/qabstractspinbox.h \
+ /usr/include/qt/QtGui/qvalidator.h \
+ /usr/include/qt/QtCore/qregularexpression.h \
+ /usr/include/qt/QtWidgets/qslider.h \
+ /usr/include/qt/QtWidgets/qabstractslider.h \
+ /usr/include/qt/QtWidgets/qstyle.h /usr/include/qt/QtWidgets/qtabbar.h \
+ /usr/include/qt/QtWidgets/qrubberband.h \
+ /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/build-ProblemCreator-Desktop-Debug/ProblemCreator_autogen/EWIEGA46WW/moc_testdialog.cpp \
+ /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/build-ProblemCreator-Desktop-Debug/ProblemCreator_autogen/EWIEGA46WW/../../../ProblemCreator/testdialog.h \
+ /usr/include/qt/QtWidgets/QDialog /usr/include/qt/QtWidgets/qdialog.h

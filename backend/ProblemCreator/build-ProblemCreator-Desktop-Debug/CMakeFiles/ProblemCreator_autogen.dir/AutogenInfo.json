@@ -92,15 +92,15 @@
 	"HEADERS" : 
 	[
 		[
-			"/home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/addtaskdialog.h",
-			"MU",
-			"EWIEGA46WW/moc_addtaskdialog.cpp",
-			null
-		],
-		[
 			"/home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"/home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/testdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_testdialog.cpp",
 			null
 		]
 	],
@@ -157,17 +157,17 @@
 	"SOURCES" : 
 	[
 		[
-			"/home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/addtaskdialog.cpp",
-			"MU",
-			null
-		],
-		[
 			"/home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/main.cpp",
 			"MU",
 			null
 		],
 		[
 			"/home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/testdialog.cpp",
 			"MU",
 			null
 		]

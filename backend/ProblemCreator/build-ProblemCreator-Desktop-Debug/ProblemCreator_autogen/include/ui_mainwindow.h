@@ -35,13 +35,12 @@ public:
     QLabel *descriptionLabel;
     QLineEdit *descriptionLineEdit;
     QLabel *statementLabel;
-    QPlainTextEdit *plainTextEdit;
+    QPlainTextEdit *statementTextEdit;
     QLabel *testsListLabel;
     QHBoxLayout *testsListLayout;
     QListWidget *testsList;
-    QVBoxLayout *testsListButtons;
     QPushButton *addTestButton;
-    QPushButton *removeTestButton;
+    QVBoxLayout *testsListButtons;
     QLabel *pathLabel;
     QHBoxLayout *pathLayout;
     QLineEdit *pathLineEdit;
@@ -85,10 +84,10 @@ public:
 
         formLayout->setWidget(2, QFormLayout::LabelRole, statementLabel);
 
-        plainTextEdit = new QPlainTextEdit(centralwidget);
-        plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
+        statementTextEdit = new QPlainTextEdit(centralwidget);
+        statementTextEdit->setObjectName(QString::fromUtf8("statementTextEdit"));
 
-        formLayout->setWidget(2, QFormLayout::FieldRole, plainTextEdit);
+        formLayout->setWidget(2, QFormLayout::FieldRole, statementTextEdit);
 
         testsListLabel = new QLabel(centralwidget);
         testsListLabel->setObjectName(QString::fromUtf8("testsListLabel"));
@@ -103,18 +102,18 @@ public:
 
         testsListLayout->addWidget(testsList);
 
-        testsListButtons = new QVBoxLayout();
-        testsListButtons->setObjectName(QString::fromUtf8("testsListButtons"));
         addTestButton = new QPushButton(centralwidget);
         addTestButton->setObjectName(QString::fromUtf8("addTestButton"));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(addTestButton->sizePolicy().hasHeightForWidth());
+        addTestButton->setSizePolicy(sizePolicy);
 
-        testsListButtons->addWidget(addTestButton);
+        testsListLayout->addWidget(addTestButton);
 
-        removeTestButton = new QPushButton(centralwidget);
-        removeTestButton->setObjectName(QString::fromUtf8("removeTestButton"));
-
-        testsListButtons->addWidget(removeTestButton);
-
+        testsListButtons = new QVBoxLayout();
+        testsListButtons->setObjectName(QString::fromUtf8("testsListButtons"));
 
         testsListLayout->addLayout(testsListButtons);
 
@@ -176,7 +175,6 @@ public:
         statementLabel->setText(QCoreApplication::translate("MainWindow", "Cerinta:", nullptr));
         testsListLabel->setText(QCoreApplication::translate("MainWindow", "Teste:", nullptr));
         addTestButton->setText(QCoreApplication::translate("MainWindow", "+", nullptr));
-        removeTestButton->setText(QCoreApplication::translate("MainWindow", "-", nullptr));
         pathLabel->setText(QCoreApplication::translate("MainWindow", "Locatie de salvare:", nullptr));
         browseButton->setText(QCoreApplication::translate("MainWindow", "Navigheaza", nullptr));
         cancelButton->setText(QCoreApplication::translate("MainWindow", "Anuleaza", nullptr));

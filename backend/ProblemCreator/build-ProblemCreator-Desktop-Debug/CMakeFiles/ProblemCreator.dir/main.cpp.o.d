@@ -226,10 +226,29 @@ CMakeFiles/ProblemCreator.dir/main.cpp.o: \
  /usr/include/qt/QtWidgets/qsizepolicy.h /usr/include/qt/QtGui/qcursor.h \
  /usr/include/qt/QtGui/qkeysequence.h \
  /usr/include/qt/QtWidgets/qtabwidget.h /usr/include/qt/QtGui/qicon.h \
+ /usr/include/qt/QtWidgets/QListWidget \
+ /usr/include/qt/QtWidgets/qlistwidget.h \
+ /usr/include/qt/QtWidgets/qlistview.h \
+ /usr/include/qt/QtWidgets/qabstractitemview.h \
+ /usr/include/qt/QtWidgets/qabstractscrollarea.h \
+ /usr/include/qt/QtWidgets/qframe.h \
+ /usr/include/qt/QtCore/qabstractitemmodel.h \
+ /usr/include/qt/QtCore/qvariant.h /usr/include/qt/QtCore/qmap.h \
+ /usr/include/qt/QtCore/qitemselectionmodel.h \
+ /usr/include/qt/QtCore/qset.h \
+ /usr/include/qt/QtWidgets/qabstractitemdelegate.h \
+ /usr/include/qt/QtWidgets/qstyleoption.h \
+ /usr/include/qt/QtCore/qlocale.h \
+ /usr/include/qt/QtWidgets/qabstractspinbox.h \
+ /usr/include/qt/QtGui/qvalidator.h \
+ /usr/include/qt/QtCore/qregularexpression.h \
+ /usr/include/qt/QtWidgets/qslider.h \
+ /usr/include/qt/QtWidgets/qabstractslider.h \
+ /usr/include/qt/QtWidgets/qstyle.h /usr/include/qt/QtWidgets/qtabbar.h \
+ /usr/include/qt/QtWidgets/qrubberband.h \
  /usr/include/qt/QtWidgets/QApplication \
  /usr/include/qt/QtWidgets/qapplication.h \
  /usr/include/qt/QtCore/qcoreapplication.h \
  /usr/include/qt/QtCore/qcoreevent.h /usr/include/qt/QtCore/qeventloop.h \
  /usr/include/qt/QtGui/qguiapplication.h \
- /usr/include/qt/QtGui/qinputmethod.h /usr/include/qt/QtCore/qlocale.h \
- /usr/include/qt/QtCore/qvariant.h /usr/include/qt/QtCore/qmap.h
+ /usr/include/qt/QtGui/qinputmethod.h

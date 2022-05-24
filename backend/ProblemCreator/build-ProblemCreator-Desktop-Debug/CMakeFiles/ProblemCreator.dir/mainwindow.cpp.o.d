@@ -226,15 +226,37 @@ CMakeFiles/ProblemCreator.dir/mainwindow.cpp.o: \
  /usr/include/qt/QtWidgets/qsizepolicy.h /usr/include/qt/QtGui/qcursor.h \
  /usr/include/qt/QtGui/qkeysequence.h \
  /usr/include/qt/QtWidgets/qtabwidget.h /usr/include/qt/QtGui/qicon.h \
+ /usr/include/qt/QtWidgets/QListWidget \
+ /usr/include/qt/QtWidgets/qlistwidget.h \
+ /usr/include/qt/QtWidgets/qlistview.h \
+ /usr/include/qt/QtWidgets/qabstractitemview.h \
+ /usr/include/qt/QtWidgets/qabstractscrollarea.h \
+ /usr/include/qt/QtWidgets/qframe.h \
+ /usr/include/qt/QtCore/qabstractitemmodel.h \
+ /usr/include/qt/QtCore/qvariant.h /usr/include/qt/QtCore/qmap.h \
+ /usr/include/qt/QtCore/qitemselectionmodel.h \
+ /usr/include/qt/QtCore/qset.h \
+ /usr/include/qt/QtWidgets/qabstractitemdelegate.h \
+ /usr/include/qt/QtWidgets/qstyleoption.h \
+ /usr/include/qt/QtCore/qlocale.h \
+ /usr/include/qt/QtWidgets/qabstractspinbox.h \
+ /usr/include/qt/QtGui/qvalidator.h \
+ /usr/include/qt/QtCore/qregularexpression.h \
+ /usr/include/qt/QtWidgets/qslider.h \
+ /usr/include/qt/QtWidgets/qabstractslider.h \
+ /usr/include/qt/QtWidgets/qstyle.h /usr/include/qt/QtWidgets/qtabbar.h \
+ /usr/include/qt/QtWidgets/qrubberband.h \
+ /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/testdialog.h \
+ /usr/include/qt/QtWidgets/QDialog /usr/include/qt/QtWidgets/qdialog.h \
  /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/build-ProblemCreator-Desktop-Debug/ProblemCreator_autogen/include/./ui_mainwindow.h \
  /usr/include/qt/QtCore/QVariant /usr/include/qt/QtCore/qvariant.h \
- /usr/include/qt/QtCore/qmap.h /usr/include/qt/QtWidgets/QApplication \
+ /usr/include/qt/QtWidgets/QApplication \
  /usr/include/qt/QtWidgets/qapplication.h \
  /usr/include/qt/QtCore/qcoreapplication.h \
  /usr/include/qt/QtCore/qcoreevent.h /usr/include/qt/QtCore/qeventloop.h \
  /usr/include/qt/QtGui/qguiapplication.h \
- /usr/include/qt/QtGui/qinputmethod.h /usr/include/qt/QtCore/qlocale.h \
- /usr/include/qt/QtCore/qvariant.h /usr/include/qt/QtWidgets/QFormLayout \
+ /usr/include/qt/QtGui/qinputmethod.h \
+ /usr/include/qt/QtWidgets/QFormLayout \
  /usr/include/qt/QtWidgets/qformlayout.h \
  /usr/include/qt/QtWidgets/QLayout /usr/include/qt/QtWidgets/qlayout.h \
  /usr/include/qt/QtWidgets/qlayoutitem.h \
@@ -243,28 +265,11 @@ CMakeFiles/ProblemCreator.dir/mainwindow.cpp.o: \
  /usr/include/qt/QtWidgets/qgridlayout.h \
  /usr/include/qt/QtWidgets/QHBoxLayout \
  /usr/include/qt/QtWidgets/qboxlayout.h /usr/include/qt/QtWidgets/QLabel \
- /usr/include/qt/QtWidgets/qlabel.h /usr/include/qt/QtWidgets/qframe.h \
- /usr/include/qt/QtWidgets/QLineEdit \
+ /usr/include/qt/QtWidgets/qlabel.h /usr/include/qt/QtWidgets/QLineEdit \
  /usr/include/qt/QtWidgets/qlineedit.h \
  /usr/include/qt/QtGui/qtextcursor.h /usr/include/qt/QtGui/qtextformat.h \
  /usr/include/qt/QtGui/qpen.h /usr/include/qt/QtGui/qtextoption.h \
  /usr/include/qt/QtWidgets/QListWidget \
- /usr/include/qt/QtWidgets/qlistwidget.h \
- /usr/include/qt/QtWidgets/qlistview.h \
- /usr/include/qt/QtWidgets/qabstractitemview.h \
- /usr/include/qt/QtWidgets/qabstractscrollarea.h \
- /usr/include/qt/QtCore/qabstractitemmodel.h \
- /usr/include/qt/QtCore/qitemselectionmodel.h \
- /usr/include/qt/QtCore/qset.h \
- /usr/include/qt/QtWidgets/qabstractitemdelegate.h \
- /usr/include/qt/QtWidgets/qstyleoption.h \
- /usr/include/qt/QtWidgets/qabstractspinbox.h \
- /usr/include/qt/QtGui/qvalidator.h \
- /usr/include/qt/QtCore/qregularexpression.h \
- /usr/include/qt/QtWidgets/qslider.h \
- /usr/include/qt/QtWidgets/qabstractslider.h \
- /usr/include/qt/QtWidgets/qstyle.h /usr/include/qt/QtWidgets/qtabbar.h \
- /usr/include/qt/QtWidgets/qrubberband.h \
  /usr/include/qt/QtWidgets/QMainWindow \
  /usr/include/qt/QtWidgets/QPlainTextEdit \
  /usr/include/qt/QtWidgets/qplaintextedit.h \
@@ -282,12 +287,14 @@ CMakeFiles/ProblemCreator.dir/mainwindow.cpp.o: \
  /usr/include/qt/QtWidgets/QStatusBar \
  /usr/include/qt/QtWidgets/qstatusbar.h \
  /usr/include/qt/QtWidgets/QVBoxLayout /usr/include/qt/QtWidgets/QWidget \
- /usr/include/qt/QtWidgets/qwidget.h \
- /usr/include/qt/QtWidgets/QMessageBox \
+ /usr/include/qt/QtWidgets/qwidget.h /usr/include/openssl/sha.h \
+ /usr/include/openssl/e_os2.h /usr/include/openssl/opensslconf.h \
+ /usr/include/openssl/opensslv.h /usr/include/qt/QtWidgets/QMessageBox \
  /usr/include/qt/QtWidgets/qmessagebox.h \
  /usr/include/qt/QtWidgets/qdialog.h \
  /usr/include/qt/QtWidgets/QFileDialog \
  /usr/include/qt/QtWidgets/qfiledialog.h /usr/include/qt/QtCore/qdir.h \
- /usr/include/qt/QtCore/qfileinfo.h \
- /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/addtaskdialog.h \
- /usr/include/qt/QtWidgets/QDialog /usr/include/qt/QtWidgets/qdialog.h
+ /usr/include/qt/QtCore/qfileinfo.h /usr/include/qt/QtCore/QByteArray \
+ /usr/include/qt/QtCore/qbytearray.h /usr/include/qt/QtCore/QFile \
+ /usr/include/qt/QtCore/qfile.h /usr/include/qt/QtCore/QTextStream \
+ /usr/include/qt/QtCore/qtextstream.h

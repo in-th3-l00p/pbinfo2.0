@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AddTaskDialog</class>
- <widget class="QDialog" name="AddTaskDialog">
+ <class>TestDialog</class>
+ <widget class="QDialog" name="TestDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>466</width>
+    <height>109</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Setarile testului</string>
   </property>
   <layout class="QFormLayout" name="formLayout">
    <item row="0" column="0">
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="inputLabel">
      <property name="text">
-      <string>Locatie de salvare:</string>
+      <string>Input:</string>
      </property>
     </widget>
    </item>
@@ -27,10 +27,10 @@
       <enum>QLayout::SetMaximumSize</enum>
      </property>
      <item>
-      <widget class="QLineEdit" name="pathLineEdit"/>
+      <widget class="QLineEdit" name="inputLineEdit"/>
      </item>
      <item>
-      <widget class="QPushButton" name="browseButton">
+      <widget class="QPushButton" name="inputBrowseButton">
        <property name="text">
         <string>Navigheaza</string>
        </property>
@@ -38,7 +38,31 @@
      </item>
     </layout>
    </item>
-   <item row="1" column="0" colspan="2">
+   <item row="1" column="0">
+    <widget class="QLabel" name="outputLabel">
+     <property name="text">
+      <string>Output:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <layout class="QHBoxLayout" name="outputLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetMaximumSize</enum>
+     </property>
+     <item>
+      <widget class="QLineEdit" name="outputLineEdit"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="outputBrowseButton">
+       <property name="text">
+        <string>Navigheaza</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0" colspan="2">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -55,7 +79,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>AddTaskDialog</receiver>
+   <receiver>TestDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -71,7 +95,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>AddTaskDialog</receiver>
+   <receiver>TestDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

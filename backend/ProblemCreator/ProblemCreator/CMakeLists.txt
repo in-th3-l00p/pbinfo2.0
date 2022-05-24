@@ -17,8 +17,8 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp mainwindow.h
-        addtaskdialog.h addtaskdialog.cpp
-        mainwindow.ui addtaskdialog.ui
+        testdialog.h testdialog.cpp
+        mainwindow.ui testdialog.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -45,6 +45,7 @@ else()
 endif()
 
 target_link_libraries(ProblemCreator PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(ProblemCreator PRIVATE crypto)
 
 set_target_properties(ProblemCreator PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

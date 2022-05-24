@@ -111,26 +111,26 @@ CMakeFiles/ProblemCreator.dir/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProblemCreator.dir/mainwindow.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/mainwindow.cpp -o CMakeFiles/ProblemCreator.dir/mainwindow.cpp.s
 
-CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.o: CMakeFiles/ProblemCreator.dir/flags.make
-CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.o: /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/addtaskdialog.cpp
-CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.o: CMakeFiles/ProblemCreator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/build-ProblemCreator-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.o -MF CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.o.d -o CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.o -c /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/addtaskdialog.cpp
+CMakeFiles/ProblemCreator.dir/testdialog.cpp.o: CMakeFiles/ProblemCreator.dir/flags.make
+CMakeFiles/ProblemCreator.dir/testdialog.cpp.o: /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/testdialog.cpp
+CMakeFiles/ProblemCreator.dir/testdialog.cpp.o: CMakeFiles/ProblemCreator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/build-ProblemCreator-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ProblemCreator.dir/testdialog.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ProblemCreator.dir/testdialog.cpp.o -MF CMakeFiles/ProblemCreator.dir/testdialog.cpp.o.d -o CMakeFiles/ProblemCreator.dir/testdialog.cpp.o -c /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/testdialog.cpp
 
-CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/addtaskdialog.cpp > CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.i
+CMakeFiles/ProblemCreator.dir/testdialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProblemCreator.dir/testdialog.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/testdialog.cpp > CMakeFiles/ProblemCreator.dir/testdialog.cpp.i
 
-CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/addtaskdialog.cpp -o CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.s
+CMakeFiles/ProblemCreator.dir/testdialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProblemCreator.dir/testdialog.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/intheloop/Desktop/pbinfo2.0/backend/ProblemCreator/ProblemCreator/testdialog.cpp -o CMakeFiles/ProblemCreator.dir/testdialog.cpp.s
 
 # Object files for target ProblemCreator
 ProblemCreator_OBJECTS = \
 "CMakeFiles/ProblemCreator.dir/ProblemCreator_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/ProblemCreator.dir/main.cpp.o" \
 "CMakeFiles/ProblemCreator.dir/mainwindow.cpp.o" \
-"CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.o"
+"CMakeFiles/ProblemCreator.dir/testdialog.cpp.o"
 
 # External object files for target ProblemCreator
 ProblemCreator_EXTERNAL_OBJECTS =
@@ -138,7 +138,7 @@ ProblemCreator_EXTERNAL_OBJECTS =
 ProblemCreator: CMakeFiles/ProblemCreator.dir/ProblemCreator_autogen/mocs_compilation.cpp.o
 ProblemCreator: CMakeFiles/ProblemCreator.dir/main.cpp.o
 ProblemCreator: CMakeFiles/ProblemCreator.dir/mainwindow.cpp.o
-ProblemCreator: CMakeFiles/ProblemCreator.dir/addtaskdialog.cpp.o
+ProblemCreator: CMakeFiles/ProblemCreator.dir/testdialog.cpp.o
 ProblemCreator: CMakeFiles/ProblemCreator.dir/build.make
 ProblemCreator: /usr/lib/libQt5Widgets.so.5.15.3
 ProblemCreator: /usr/lib/libQt5Gui.so.5.15.3

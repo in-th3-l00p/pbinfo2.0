@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ProblemCreator_autogen"
-  "ProblemCreator_autogen/include/ui_addtaskdialog.h"
   "ProblemCreator_autogen/include/ui_mainwindow.h"
+  "ProblemCreator_autogen/include/ui_testdialog.h"
   "ProblemCreator_autogen/mocs_compilation.cpp"
 )
 
