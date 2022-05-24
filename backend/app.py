@@ -1,8 +1,11 @@
+import json
+
 from flask import Flask, request, make_response
 from flask_cors import CORS, cross_origin
-from uuid import uuid4
-import os
+from evaluation import Evaluator
+import os, sys
 
+evaluator = None
 app = Flask(__name__)
 cors = CORS(app)
 
@@ -54,10 +57,26 @@ def getProblemStatement():
     return grabFile(hash, "statement.md")
 
 @app.route("/evaluate", methods=["POST"])
+@cross_origin()
 def evaluate():
-    id = uuid4()
-    print(request.args)
-    return id.hex
+    try:
+        data = json.loads(request.data)
+        hash = data["hash"]
+        source = data["source"]
+    except:
+        resp = make_response("invalid input", 400)
+        return resp
+
+    index = evaluator.addSession(hash, source)
+    score = evaluator.sessions[index].evaluate()
+    evaluator.removeSession(index)
+
+    return str(score)
 
 if __name__ == "__main__":
+    #initializing the evaluator
+    if (len(sys.argv) >= 2):
+        evaluator = Evaluator(sys.argv[1])
+    else:
+        evaluator = Evaluator()
     app.run(debug=True)

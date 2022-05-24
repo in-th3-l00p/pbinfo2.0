@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
 
 $bg-color: #272d31;
+$btn-gradient: linear-gradient(45deg, rgb(68, 18, 68), rgb(135, 0, 110));
 
 * {
     margin: 0;
@@ -23,7 +24,6 @@ body {
         background-color: #212529;
     } 
     to {
-        color: #212529;
         background-color: white;
     }
 }
@@ -36,8 +36,7 @@ body {
 
     &:hover {
         animation: btnHover 0.5s;
-        color: #212529;
-        background-color: white;
+        background-image: $btn-gradient;
     }
 }
 
@@ -49,7 +48,6 @@ body {
 
     &:hover {
         animation: btnHover 0.5s;
-        color: #17191c;
-        background-color: white;
+        background-image: $btn-gradient;
     }
 }

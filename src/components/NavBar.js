@@ -32,6 +32,7 @@ export default function NavBar() {
                     <Nav className="me-auto">
                         <Nav.Link href="/">acasa</Nav.Link>
                         <Nav.Link href="/probleme">probleme</Nav.Link>
+                        <Nav.Link href="/articole">articole</Nav.Link>
                         <Nav.Link href="/contact">contact</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

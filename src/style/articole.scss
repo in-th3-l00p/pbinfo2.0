@@ -1,0 +1,13 @@
+.articole {
+    display: flex;
+    flex-direction: column;
+    .articol {
+        border: 1px solid white;
+        border-radius: 15px;
+        padding: 15px;
+    }
+}
+
+.articolImg {
+    width: 40vw;
+}

@@ -12,6 +12,10 @@ export default function Problema() {
     const [statement, setStatement] = useState(undefined)
     const [error, setError] = useState(false)
 
+    const [source, setSource] = useState("")
+    const [evaluating, setEvaluating] = useState(false)
+    const [evaluated, setEvaluated] = useState(false)
+
     //URLs declared as constants for better access
     const searchParams = new URLSearchParams({ hash: id })
     const infoURL = (
@@ -37,7 +41,6 @@ export default function Problema() {
             })
             .catch(err => {console.log(err); setError(err)})
     }, [])
-    console.log(title, statement)
 
     if (error)
         return (
@@ -56,11 +59,31 @@ export default function Problema() {
                 <h3>Sursa:</h3>
                 <Form.Control 
                     as="textarea" className="codeInput" rows={12}
+                    onChange={(event) => setSource(event.target.value)}
                 />
             </div>
 
             <div className="evaluate text-center mt-3">
-                <Button variant="dark" className="darkBtn darkerBtn" size="lg">Evalueaza</Button>
+                {!evaluating || !evaluated ? (
+                    <Button 
+                        variant="dark" className="darkBtn darkerBtn" 
+                        size="lg" onClick={() => {
+                            setEvaluating(true)
+                            fetch("http://localhost:5000/evaluate", {
+                                method: "post",
+                                body: JSON.stringify({
+                                    hash: id,
+                                    source: source
+                                })
+                            })
+                        }}
+                    >
+                        Evalueaza
+                    </Button>
+                ) : (
+                    <p>se evalueaza</p>
+                )
+                }
             </div>
         </TextBox>
     )
