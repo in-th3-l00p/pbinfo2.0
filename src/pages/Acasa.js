@@ -35,7 +35,7 @@ export default function Acasa() {
                 <span>
                     <p>
                         Motivatia din spatele platformei provine
-                        din faptul ca programa informatici din liceu este mult prea teoretica.
+                        din faptul ca programa informaticii din liceu este mult prea teoretica.
                     </p>
                     <p>
                         Intradevar, ajuta pentru a dobandi o gandire algoritmica, insa nu 
@@ -43,7 +43,7 @@ export default function Acasa() {
                     </p>
                     <p>
                         Pe aceasta platforma vor aparea tutoriale si probleme din
-                        partii ale informatici care nu se predau in scoala (de exemplu programarea grafica).
+                        parti ale informaticii care nu se predau in scoala (de exemplu programarea grafica).
                     </p>
                 </span>
             </TextBox>
