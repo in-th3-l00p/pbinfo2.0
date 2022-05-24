@@ -42,11 +42,12 @@ export default function Probleme() {
 
                 setProblems(problemsList)
             })
+            .catch(err => setError(err))
     }, [])
 
     if (error)
         return (
-            <h1 className="text-center font-weight-bold">
+            <h1 className="mt-5 text-center font-weight-bold">
                 Eroare in afisarea problemelor
             </h1>
         )
