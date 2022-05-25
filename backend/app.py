@@ -68,10 +68,10 @@ def evaluate():
         return resp
 
     index = evaluator.addSession(hash, source)
-    score = evaluator.sessions[index].evaluate()
+    status = evaluator.sessions[index].evaluate()
     evaluator.removeSession(index)
 
-    return str(score)
+    return status
 
 if __name__ == "__main__":
     #initializing the evaluator

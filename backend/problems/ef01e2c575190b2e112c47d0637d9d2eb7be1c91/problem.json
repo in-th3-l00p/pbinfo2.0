@@ -1,5 +1,7 @@
 {
     "title": "CMMDC",
     "description": "Calculeaza cmmdc-ul a doua numere",
-    "tests": 5
+    "tests": 5,
+    "input": "cmmdc.in",
+    "output": "cmmdc.out"
 }
