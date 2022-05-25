@@ -9,5 +9,3 @@ Tech stack:
     1. React
     2. Bootstrap
     3. Scss
-
-Evaluatorul este aproape terminat, dar nu inca 😞

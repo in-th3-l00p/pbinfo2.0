@@ -69,7 +69,7 @@ def evaluate():
 
     index = evaluator.addSession(hash, source)
     status = evaluator.sessions[index].evaluate()
-    evaluator.removeSession(index)
+    #evaluator.removeSession(index)
 
     return status
 

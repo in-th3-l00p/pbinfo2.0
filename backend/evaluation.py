@@ -1,4 +1,5 @@
-import os, shutil, json
+import os, shutil, json, subprocess, time
+import posix
 from uuid import uuid4
 
 #the sessions path
@@ -8,7 +9,6 @@ problemsPath = os.path.join(execPath, "problems")
 
 class Session:
     def __init__(self, problem, source, compilerPath):
-        print(source, compilerPath)
         self.problem = problem
         self.uuid = str(uuid4())
 
@@ -48,13 +48,36 @@ class Session:
                 content = json.loads(stream.read(size))
                 input = content["input"]
                 output = content["output"]
-                tests = content["tests"]
+                tests = int(content["tests"])
 
                 stream.close()
         except FileNotFoundError:
             return  json.dumps({"error": "problema nu a fost gasita", "solved": 0})
 
-        print(input, output, tests)
+        solved = 0
+        for i in range(0, tests):
+            testName = os.path.join(
+                problemPath, "tests", "test{}.in".format(i)
+            )
+
+            shutil.copy( , self.cwd)
+
+            #renaming the test
+            shutil.move(
+                os.path.join(
+                    problemPath, "tests", "test{}.in".format(i)
+                )
+            )
+
+            #running the program
+            process = subprocess.Popen([os.path.join(self.cwd, "bin")], shell=False, cwd=self.cwd)
+            time.sleep(1)
+            if process.poll() == None:
+                process.kill()
+                continue
+            break
+
+
         return json.dumps({"error": "", "solved": tests})
 
 class Evaluator:
