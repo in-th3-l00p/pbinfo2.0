@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import showdown from 'showdown';
 import TextBox from "../components/TextBox"
 import { useParams } from 'react-router-dom';
-import { Form, Button, Container, Spinner } from "react-bootstrap"
+import { Form, Button, Container } from "react-bootstrap"
 import Loading from '../components/Loading';
 import "../style/problema.scss"
 
+const fourSpaces = "    " //used for handling tabs
 function EvaluationDisplay({ evaluation, tests }) {
-    console.log(evaluation)
     if (evaluation.error)
         return (
             <Container className="mx-3 bg-danger border" fluid>
@@ -77,7 +77,6 @@ export default function Problema() {
     if (!info || !statement)
         return <Loading />
 
-    console.log(evaluated)
     return (
         <TextBox className="my-3">
             <h2 className="text-center text-decoration-underline">{info.title}</h2>
@@ -87,6 +86,22 @@ export default function Problema() {
                 <Form.Control 
                     as="textarea" className="codeInput" rows={12}
                     onChange={(event) => setSource(event.target.value)}
+                    onKeyDown={(event) => {
+                        if (event.key === "Tab") {
+                            event.preventDefault()
+                            let start = event.target.selectionStart
+                            let end = event.target.selectionEnd
+
+                            //handling the spaces
+                            event.target.value = (
+                                event.target.value.substr(0, start) + fourSpaces + 
+                                event.target.value.substr(end)
+                            )
+
+                            event.target.selectionStart = start + 4
+                            event.target.selectionEnd = start + 4
+                        }
+                    }}
                 />
             </div>
 
@@ -120,8 +135,7 @@ export default function Problema() {
                         evaluation={evaluated}
                         tests={info.tests} 
                     />
-                )
-                }
+                )}
             </div>
         </TextBox>
     )
