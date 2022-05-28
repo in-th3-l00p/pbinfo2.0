@@ -31,13 +31,16 @@ class Session:
         ))
 
     def readContent(self, path):
-        with open(path, "r") as stream:
-            stream.seek(0, os.SEEK_END)
-            size = stream.tell()
-            stream.seek(0, os.SEEK_SET)
-            content = stream.read(size)
-            stream.close()
-        return content
+        try:
+            with open(path, "r") as stream:
+                stream.seek(0, os.SEEK_END)
+                size = stream.tell()
+                stream.seek(0, os.SEEK_SET)
+                content = stream.read(size)
+                stream.close()
+            return content
+        except FileNotFoundError:
+            return ""
 
     def evaluate(self):
         try:  # see if the file compiled
@@ -109,9 +112,12 @@ class Evaluator:
         self.sessions = []
 
         # deleting every sessions that remained
-        with os.scandir(sessionsPath) as directory:
-            for session in directory:
-                shutil.rmtree(os.path.join(sessionsPath, session.name))
+        try:
+            with os.scandir(sessionsPath) as directory:
+                for session in directory:
+                    shutil.rmtree(os.path.join(sessionsPath, session.name))
+        except FileNotFoundError:
+            os.mkdir(sessionsPath)
 
     def addSession(self, problem, source):
         index = len(self.sessions)
