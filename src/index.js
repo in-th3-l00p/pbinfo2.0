@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Layout from "./components/Layout";
 import Acasa from "./pages/Acasa";
 import Probleme from "./pages/Probleme";
-import Articole, { ProgramareDinamica, CautareBinara } from "./pages/Articole";
+import Articole, { IntroducereProgramareDinamica, CautareBinara } from "./pages/Articole";
 import Contact from "./pages/Contact";
 import Problema from "./pages/Problema";
 import "./style/globals.scss"
@@ -19,9 +19,9 @@ function App() {
                     <Route path="/articole">
                         <Route index element={<Articole />} />
                         <Route 
-                            path="/articole/programare-dinamica" 
+                            path="/articole/introducere-programare-dinamica" 
                             element={
-                                <ProgramareDinamica />
+                                <IntroducereProgramareDinamica />
                         } />
                         <Route
                             path="/articole/cautare-binara"

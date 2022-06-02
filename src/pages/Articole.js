@@ -1,44 +1,37 @@
-import { Container } from "react-bootstrap"
-import TextBox from "../components/TextBox"
+import { Container, Button } from "react-bootstrap"
 import Gist from "react-gist"
+import TextBox from "../components/TextBox"
+import ListItem from "../components/ListItem"
 import "../style/articole.scss"
 
-function Articol({title, description, href}) {
-    return (
-        <div className="articol mt-3" onClick={
-            () => window.location = "/articole/" + href}
-        >
-            <h3>{title}</h3>
-            <p>{description}</p>
-        </div>
-    )
-}
-
+const buttonText = "Citeste"
 export default function Articole() {
     return (
         <Container className="p-3" fluid>
             <h2 className="text-decoration-underline">Lista de articole:</h2>
             <span className="articole">
-                <Articol 
-                    title="Programare dinamica" 
+                <ListItem 
+                    title="Introducere in programare dinamica" 
                     description="Explicarea pe scurt a tehnicii de proiectare a algorimilor numita programarea dinamica" 
-                    href="programare-dinamica"
+                    href="/articole/introducere-programare-dinamica"
+                    buttonText={buttonText}
                 />
-                <Articol 
+                <ListItem 
                     title="Cautarea binara"
                     description="Explicarea algoritmului de cautare"
-                    href="cautare-binara"
+                    href="/articole/cautare-binara"
+                    buttonText={buttonText}
                 />
             </span>
         </Container>
     )
 }
 
-export function ProgramareDinamica() {
+export function IntroducereProgramareDinamica() {
     return (
         <TextBox className="mt-3">
             <h2 className="text-center text-decoration-underline font-weight-bold">
-                Programarea dinamica
+                Introducerea in programarea dinamica
             </h2>
             <p>
                 Este o metoda de elaborare a algoritmilor, in care problema data este

@@ -12,6 +12,7 @@ const carouselImages = [
         caption: "aici nu citim carti 📖"
     }
 ]
+
 export default function Acasa() {
     return (
         <div>

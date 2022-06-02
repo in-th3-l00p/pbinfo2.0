@@ -1,23 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Button } from "react-bootstrap";
-import { Container } from "react-bootstrap";
-import Loading from '../components/Loading';
+import React, { useState, useEffect } from 'react'
+import { Button } from "react-bootstrap"
+import { Container } from "react-bootstrap"
+import Loading from '../components/Loading'
+import ListItem from '../components/ListItem'
 import "../style/probleme.scss"
 
 function Problem({title="titlu", description="descriere", hash="#"}) {
     return (
-        <Container className="problem border mb-3 d-flex" fluid>
-            <div className="text">
-                <h2>{title}</h2>
-                <p>{description}</p>
-            </div>
-            <Button 
-                variant="dark" className="darkerBtn m-2"
-                onClick={() => window.location = `/problema/${hash}`}
-            >
-                Rezolva
-            </Button>
-        </Container>
+        <ListItem 
+            title={title} 
+            description={description} 
+            href={`/problema/${hash}`}
+            buttonText="Rezolva"
+        />
     )
 }
 

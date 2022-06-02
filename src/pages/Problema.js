@@ -7,27 +7,72 @@ import Loading from '../components/Loading';
 import "../style/problema.scss"
 
 const fourSpaces = "    " //used for handling tabs
+
+function MessageWrapper({ children }) {
+    return (
+        <div className="border mt-3 text-center">
+            {children}
+        </div>
+    )
+}
+
 function EvaluationDisplay({ evaluation, tests }) {
-    if (evaluation.error)
+    return (
+        <>
+            {evaluation.evaluating && (
+                <MessageWrapper>
+                    <p>se evalueaza</p> 
+                </MessageWrapper>
+            )} 
+            {evaluation.evaluated && !evaluation.evaluating && (
+                <MessageWrapper>
+                    <p>s-a evaluat: {evaluation.solved}/{tests}</p> 
+                </MessageWrapper>
+            )}
+        </>
+    )
+}
+
+function EvaluateButton({evaluation, setEvaluation, id, source, disabled=false, children}) {
+    const btnOnClick = () => {
+        let newEvaluation = { ...evaluation }
+        newEvaluation.evaluating = true
+        setEvaluation(newEvaluation)
+
+        fetch("http://localhost:5000/evaluate", {
+            method: "post",
+            body: JSON.stringify({
+                hash: id,
+                source: source
+            })
+        })
+            .then(resp => resp.json())
+            .then(evalResp => {
+                let newEvaluation = { ...evaluation }
+                newEvaluation.evaluating = false
+                newEvaluation.evaluated = true
+                newEvaluation.solved = evalResp.solved
+                newEvaluation.error = evalResp.error
+                setEvaluation(newEvaluation)
+            })
+    }
+
+    if (disabled)
         return (
-            <Container className="mx-3 bg-danger border" fluid>
-                <p className="text-center font-weight-bold">
-                    evaluarea nu a fost posibila, probabil o eroare de compilare
-                </p>
-            </Container>
+            <Button 
+                variant="dark" className="darkerBtn mt-3 mx-auto" 
+                size="lg" onClick={btnOnClick} disabled
+            >
+                {children}
+            </Button>
         )
     return (
-        <Container className="mx-3 border" fluid>
-            {
-                evaluation.state ? (
-                    <p className="text-center font-weight-bold">{evaluation.solved}/{tests}</p>
-                ) : (
-                    <span>
-                        <p className="text-center">se evalueaza</p>
-                    </span>
-                )
-            }
-        </Container>
+        <Button 
+            variant="dark" className="darkerBtn mt-3 mx-auto" 
+            size="lg" onClick={btnOnClick}
+        >
+            {children}
+        </Button>
     )
 }
 
@@ -38,9 +83,12 @@ export default function Problema() {
     const [error, setError] = useState(false)
 
     const [source, setSource] = useState("")
-
-    const [evaluating, setEvaluating] = useState(false)
-    const [evaluated, setEvaluated] = useState({ state: false, error: "", solved: 0 })
+    const [evaluation, setEvaluation] = useState({
+        evaluated: false,
+        evaluating: false,
+        solved: 0,
+        error: ""
+    })
 
     //URLs declared as constants for better access
     const searchParams = new URLSearchParams({ hash: id })
@@ -62,7 +110,7 @@ export default function Problema() {
             .then(resp => resp.text())
             .then(statement => {
                 //parsing the markdown
-                var converter = new showdown.Converter();
+                let converter = new showdown.Converter();
                 setStatement(converter.makeHtml(statement))
             })
             .catch(err => {console.log(err); setError(err)})
@@ -77,6 +125,7 @@ export default function Problema() {
     if (!info || !statement)
         return <Loading />
 
+    console.log(evaluation)
     return (
         <TextBox className="my-3">
             <h2 className="text-center text-decoration-underline">{info.title}</h2>
@@ -105,37 +154,16 @@ export default function Problema() {
                 />
             </div>
 
-            <div className="evaluate text-center mt-3">
-                {!evaluating ? (
-                    <Button 
-                        variant="dark" className="darkBtn darkerBtn" 
-                        size="lg" onClick={() => {
-                            setEvaluating(true)
-                            fetch("http://localhost:5000/evaluate", {
-                                method: "post",
-                                body: JSON.stringify({
-                                    hash: id,
-                                    source: source
-                                })
-                            })
-                                .then(resp => resp.json())
-                                .then(evaluation => {
-                                    setEvaluated({
-                                        state: true, 
-                                        error: evaluation.error, 
-                                        solved: evaluation.solved
-                                    })
-                                })
-                        }}
-                    >
-                        Evalueaza
-                    </Button>
-                ) : (
-                    <EvaluationDisplay 
-                        evaluation={evaluated}
-                        tests={info.tests} 
-                    />
-                )}
+            <EvaluationDisplay evaluation={evaluation} tests={info.tests} />
+            <div className="text-center">
+                <EvaluateButton
+                    evaluation={evaluation} 
+                    setEvaluation={setEvaluation}
+                    id={id} source={source}
+                    disabled={evaluation.evaluating}
+                >
+                    Evalueaza
+                </EvaluateButton>
             </div>
         </TextBox>
     )
