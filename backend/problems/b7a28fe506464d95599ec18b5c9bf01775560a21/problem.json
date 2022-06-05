@@ -2,6 +2,7 @@
     "title": "A+B",
     "description": "Calculati suma a doua numere",
     "tests": "3",
+    "timeLimit": 100,
     "input": "adunare.in",
     "output": "adunare.out"
 }

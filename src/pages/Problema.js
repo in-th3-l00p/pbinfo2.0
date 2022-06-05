@@ -2,34 +2,62 @@ import React, { useState, useEffect } from 'react';
 import showdown from 'showdown';
 import TextBox from "../components/TextBox"
 import { useParams } from 'react-router-dom';
-import { Form, Button, Container } from "react-bootstrap"
+import { Form, Button } from "react-bootstrap"
 import Loading from '../components/Loading';
 import "../style/problema.scss"
 
 const fourSpaces = "    " //used for handling tabs
 
-function MessageWrapper({ children }) {
+function MessageWrapper({ className="", children }) {
     return (
-        <div className="border mt-3 text-center">
+        <div className={"border p-0 mt-3 text-center " + className}>
             {children}
         </div>
     )
 }
 
 function EvaluationDisplay({ evaluation, tests }) {
+    let backgroundClass = ""
+    if (evaluation.evaluated && evaluation.solved === tests)
+        backgroundClass = "solved"
+
+    console.log(evaluation, tests)
+
+    if (evaluation.evaluating) {
+        return (
+            <MessageWrapper>
+                <p>se evalueaza</p> 
+            </MessageWrapper>
+        )
+    }
+
+    if (!evaluation.evaluated)
+        return <></>
+
+    if (evaluation.error !== "")
+        return (
+            <MessageWrapper>
+                <p>{evaluation.error}</p>
+            </MessageWrapper>
+        )
+
+    if (evaluation.solved === tests)
+        return (
+            <MessageWrapper className={backgroundClass}>
+                <p>s-a evaluat: {evaluation.solved}/{tests}</p> 
+            </MessageWrapper>
+        )
+
     return (
-        <>
-            {evaluation.evaluating && (
-                <MessageWrapper>
-                    <p>se evalueaza</p> 
-                </MessageWrapper>
-            )} 
-            {evaluation.evaluated && !evaluation.evaluating && (
-                <MessageWrapper>
-                    <p>s-a evaluat: {evaluation.solved}/{tests}</p> 
-                </MessageWrapper>
-            )}
-        </>
+        <MessageWrapper>
+            {evaluation.testsSolved.map((value, key) => {
+                return (
+                    <div className={"pt-2 p-2 " + (value ? "solved" : "wrong")}>
+                        <p key={key}>{key+"."} Test {value ? "corect" : "gresit"}</p>
+                    </div>
+                )
+            })}
+        </MessageWrapper>
     )
 }
 
@@ -52,6 +80,7 @@ function EvaluateButton({evaluation, setEvaluation, id, source, disabled=false, 
                 newEvaluation.evaluating = false
                 newEvaluation.evaluated = true
                 newEvaluation.solved = evalResp.solved
+                newEvaluation.testsSolved = evalResp.testsSolved
                 newEvaluation.error = evalResp.error
                 setEvaluation(newEvaluation)
             })
@@ -87,6 +116,7 @@ export default function Problema() {
         evaluated: false,
         evaluating: false,
         solved: 0,
+        testsSolved: [],
         error: ""
     })
 
@@ -125,7 +155,6 @@ export default function Problema() {
     if (!info || !statement)
         return <Loading />
 
-    console.log(evaluation)
     return (
         <TextBox className="my-3">
             <h2 className="text-center text-decoration-underline">{info.title}</h2>
@@ -154,7 +183,7 @@ export default function Problema() {
                 />
             </div>
 
-            <EvaluationDisplay evaluation={evaluation} tests={info.tests} />
+            <EvaluationDisplay evaluation={evaluation} tests={Number(info.tests)} />
             <div className="text-center">
                 <EvaluateButton
                     evaluation={evaluation} 

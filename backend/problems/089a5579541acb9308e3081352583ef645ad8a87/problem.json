@@ -1,0 +1,8 @@
+{
+  "title": "Buldo",
+  "description": "Problema OJI 2020 Clasa a IX-a",
+  "tests": 30,
+  "timeLimit": 100,
+  "input": "buldo.in",
+  "output": "buldo.out"
+}

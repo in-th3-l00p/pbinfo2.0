@@ -2,6 +2,7 @@
     "title": "CMMDC",
     "description": "Calculeaza cmmdc-ul a doua numere",
     "tests": 5,
+    "timeLimit": 100,
     "input": "cmmdc.in",
     "output": "cmmdc.out"
 }

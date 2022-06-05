@@ -75,7 +75,7 @@ def evaluate():
 
     index = evaluator.addSession(hash, source)
     status = evaluator.sessions[index].evaluate()
-    evaluator.removeSession(index)
+    #evaluator.removeSession(index)
 
     return status
 
@@ -86,4 +86,4 @@ if __name__ == "__main__":
         evaluator = Evaluator(sys.argv[1])
     else:
         evaluator = Evaluator()
-    app.run(debug=True)
+    app.run(debug=True, threaded=True)

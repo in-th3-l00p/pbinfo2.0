@@ -1,5 +1,4 @@
 import os, shutil, json, subprocess, time
-import posix
 from uuid import uuid4
 
 # the sessions path
@@ -47,7 +46,7 @@ class Session:
             binary = open(os.path.join(self.cwd, "bin"), "r")
             binary.close()
         except FileNotFoundError:
-            return json.dumps({"error": "eroare de compilare", "solved": 0})
+            return json.dumps({"error": "eroare de compilare"})
 
         # getting the input and output file names
         problemPath = os.path.join(problemsPath, self.problem)
@@ -57,17 +56,19 @@ class Session:
                 size = stream.tell()
                 stream.seek(0, os.SEEK_SET)
 
-                content = json.loads(stream.read(size))
-                input = content["input"]
-                output = content["output"]
-                tests = int(content["tests"])
+                problemInfo = json.loads(stream.read(size))
+                input = problemInfo["input"]
+                output = problemInfo["output"]
+                problemInfo["tests"] = int(problemInfo["tests"])
+                problemInfo["timeLimit"] = int(problemInfo["timeLimit"]) / 1000
 
                 stream.close()
         except FileNotFoundError:
-            return json.dumps({"error": "problema nu a fost gasita", "solved": 0})
+            return json.dumps({"error": "problema nu a fost gasita"})
 
         solved = 0
-        for i in range(0, tests):
+        testsSolved = [False for i in range(problemInfo["tests"])]
+        for i in range(0, problemInfo["tests"]):
             testName = os.path.join(
                 problemPath, "tests", "test{}.in".format(i)
             )
@@ -85,8 +86,9 @@ class Session:
 
             # running the program
             process = subprocess.Popen([os.path.join(self.cwd, "bin")], shell=False, cwd=self.cwd)
-            time.sleep(1)
-            if process.poll() is None:
+            time.sleep(problemInfo["timeLimit"])
+            if process.poll(): # timeout
+                print("pe limita")
                 process.kill()
                 continue
 
@@ -100,10 +102,14 @@ class Session:
                 )
             )
 
+            if testOutput[len(testOutput) - 1] == '\n':
+                testOutput = testOutput[:-1]
+
             if userOutput == testOutput:
                 solved += 1
+                testsSolved[i] = True
 
-        return json.dumps({"error": "", "solved": solved})
+        return json.dumps({"error": "", "solved": solved, "testsSolved": testsSolved})
 
 
 class Evaluator:

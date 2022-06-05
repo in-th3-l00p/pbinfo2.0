@@ -12,7 +12,7 @@ $btn-gradient: linear-gradient(45deg, rgb(68, 18, 68), rgb(135, 0, 110));
 
 body {
     background-color: $bg-color;
-    h1, h2, h3, h4, h5, h6, p, span, pre {
+    h1, h2, h3, h4, h5, h6, p, span, pre, li {
         font-family: 'Noto Sans Mono', monospace;
         color: white;
     }
