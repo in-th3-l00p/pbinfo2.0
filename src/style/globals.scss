@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
 
 $bg-color: #272d31;
+$btn-bgcolor: #17191c;
 $btn-gradient: linear-gradient(45deg, rgb(68, 18, 68), rgb(135, 0, 110));
 
 * {
@@ -18,36 +19,24 @@ body {
     }
 }
 
-@keyframes btnHover {
+@keyframes btnhover {
     from {
         color: white;
-        background-color: #212529;
     } 
     to {
         background-color: white;
     }
 }
 
-.darkBtn {
+.dark-btn {
     animation: btnHover 0.5s;
     animation-direction: reverse;
     color: white;
-    background-color: #212529;
+    background-color: $btn-bgcolor;
 
     &:hover {
-        animation: btnHover 0.5s;
+        animation: btnhover 0.5s;
         background-image: $btn-gradient;
-    }
-}
-
-.darkerBtn {
-    animation: btnHover 0.5s;
-    animation-direction: reverse;
-    color: white;
-    background-color: #17191c;
-
-    &:hover {
-        animation: btnHover 0.5s;
-        background-image: $btn-gradient;
+        text-decoration: underline;
     }
 }

@@ -20,7 +20,7 @@ export default function Contact() {
                     <Form.Control as="textarea" placeholder="Content" style={{height: 350+"px"}} />
                 </FloatingLabel>
                 <div className="text-center">
-                    <Button size="lg" variant="dark" className="darkerBtn">Trimite</Button>
+                    <Button size="lg" variant="dark" className="dark-btn">Trimite</Button>
                 </div>
             </Form>
         </TextBox>

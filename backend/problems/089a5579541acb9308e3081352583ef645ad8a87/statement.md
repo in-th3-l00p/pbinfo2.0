@@ -6,3 +6,15 @@ Pentru a nivela terenul ai închiriat un buldozer care funcționează astfel. Se
 * dacă *hi < H* atunci se scade din *C* diferența *H - hi* pentru a aduce nivelul zonei la nivelul *H*.
 
 Remarcăm faptul că *H* trebuie ales inițial astfel încât de fiecare dată când buldozerul ajunge în a doua situație să aibă pe lamă suficient pământ (*C ≥ H - hi*). După ce buldozerul parcurge cele *N* zone de lungime *1* pe lama buldozerului e posibil să mai rămână pământ, dar asta nu te interesează, pentru că la capătul din dreapta al terenului este un râu, și pământul rămas se va vărsa acolo.
+
+## Intrare
+Se citeste din fisierul "buldo.in".
+
+## Iesire
+Se scrie in fisierul "buldo.out".
+
+## Restrictii si precizari
+* 1 ≤ N ≤ 100.000
+* Înălțimile sunt numere naturale, 1 ≤ hi ≤ 1.000.000.000, pentru orice i, 1≤i≤N.
+* Pentru teste în valoare de 50 de puncte, N ≤ 1000 și hi ≤ 1000, pentru orice i, 1≤i≤N.
+* În concurs s-au acordat 90 de puncte, și 10 punte din oficiu. Pe site se acordă 10 puncte pentru exemplu.

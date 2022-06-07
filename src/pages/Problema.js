@@ -89,7 +89,7 @@ function EvaluateButton({evaluation, setEvaluation, id, source, disabled=false, 
     if (disabled)
         return (
             <Button 
-                variant="dark" className="darkerBtn mt-3 mx-auto" 
+                variant="dark" className="dark-btn mt-3 mx-auto" 
                 size="lg" onClick={btnOnClick} disabled
             >
                 {children}
@@ -97,7 +97,7 @@ function EvaluateButton({evaluation, setEvaluation, id, source, disabled=false, 
         )
     return (
         <Button 
-            variant="dark" className="darkerBtn mt-3 mx-auto" 
+            variant="dark" className="dark-btn mt-3 mx-auto" 
             size="lg" onClick={btnOnClick}
         >
             {children}

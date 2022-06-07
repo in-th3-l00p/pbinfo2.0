@@ -26,3 +26,31 @@ header .carousel {
         }
     }
 }
+
+$articles-list-bgcolor: #1f2125;
+$articles-list-bordercolor: #2a2a2a;
+$article-size: 120px;
+.articles-list {
+    background-color: $articles-list-bgcolor;
+    padding: 7.5px;
+    border: 2px solid $articles-list-bordercolor;
+    border-radius: 1.15rem;
+    overflow-x: auto;
+
+    .disabled-text {
+        user-select: none;
+        color: grey;
+    }
+
+    .article {
+        width: $article-size;
+        height: $article-size;
+        font-size: 1rem;
+
+        /*centering*/
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -11,7 +11,7 @@ export default function ListItem({title, description, buttonText, href}) {
                 <p>{description}</p>
             </div>
             <Button 
-                variant="dark" className="darkerBtn m-2"
+                variant="dark" className="dark-btn m-2"
                 onClick={() => window.location = href}
             >
                 {buttonText}
