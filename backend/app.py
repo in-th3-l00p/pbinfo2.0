@@ -6,7 +6,7 @@ from evaluation import Evaluator
 import os, sys
 
 evaluator = None
-app = Flask(__name__, static_url_path="", static_folder="build")
+app = Flask(__name__, static_url_path="", static_folder="static")
 cors = CORS(app)
 
 # important paths
@@ -16,7 +16,7 @@ problemsPath = os.path.join(execPath, "problems")
 @app.route("/", defaults={'path':''})
 @app.errorhandler(404)
 def serve(path):
-    return send_from_directory(app.static_folder,'index.html')
+    return send_from_directory(app.static_folder, 'index.html')
 
 @app.route("/api/getProblemHashes")
 @cross_origin()
