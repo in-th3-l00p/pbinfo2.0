@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Cautarea binara",
+        "description": "Explicarea algoritmului de cautare binara",
+        "content": "cautare-binara"
+    },
+    {
+        "title": "Introducere in programarea dinamica",
+        "description": "Explicarea pe scurt a tehnicii de proiectare a algorimilor numita programarea dinamica",
+        "content": "introducere-in-programarea-dinamica"
+    }
+]

@@ -1,13 +1,10 @@
-.articole {
+.articles {
     display: flex;
     flex-direction: column;
-    .articol {
-        border: 1px solid white;
-        border-radius: 15px;
-        padding: 15px;
-    }
 }
 
-.articolImg {
-    width: 40vw;
+.article {
+    img {
+        width: 40vw;
+    }
 }
