@@ -1,26 +1,24 @@
 import json
 
-from flask import Flask, request, make_response
+from flask import Flask, request, make_response, render_template, send_from_directory
 from flask_cors import CORS, cross_origin
 from evaluation import Evaluator
 import os, sys
 
 evaluator = None
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="", static_folder="build")
 cors = CORS(app)
 
 # important paths
 execPath = os.path.dirname(__file__)
 problemsPath = os.path.join(execPath, "problems")
 
+@app.route("/", defaults={'path':''})
+@app.errorhandler(404)
+def serve(path):
+    return send_from_directory(app.static_folder,'index.html')
 
-@app.route("/")
-@cross_origin()
-def index():
-    return "backendul merge forta 👍"
-
-
-@app.route("/getProblemHashes")
+@app.route("/api/getProblemHashes")
 @cross_origin()
 def getProblemHashes():
     directories = "["
@@ -49,20 +47,20 @@ def grabFile(hash, fileName):
         return resp
 
 
-@app.route("/getProblemInformations")
+@app.route("/api/getProblemInformations")
 def getProblemInformations():
     hash = request.args.get("hash")
     return grabFile(hash, "problem.json")
 
 
-@app.route("/getProblemStatement")
+@app.route("/api/getProblemStatement")
 @cross_origin()
 def getProblemStatement():
     hash = request.args.get("hash")
     return grabFile(hash, "statement.md")
 
 
-@app.route("/evaluate", methods=["POST"])
+@app.route("/api/evaluate", methods=["POST"])
 @cross_origin()
 def evaluate():
     try:

@@ -19,13 +19,13 @@ export default function Probleme() {
     const [problems, setProblems] = useState(undefined)
     const [error, setError] = useState(undefined)
     useEffect(() => {
-        fetch("http://localhost:5000/getProblemHashes")
+        fetch("/api/getProblemHashes")
             .then(resp => resp.json())
             .then(async (hashes) => {
                 let problemsList = [] //auxiliary list
                 for (let i = 0; i < hashes.length; i++) {
                     //getting the url with the query search params
-                    let url = "http://localhost:5000/getProblemInformations" 
+                    let url = "/api/getProblemInformations" 
                     url += "?" + new URLSearchParams({hash: hashes[i]})
 
                     //fetchinnnn

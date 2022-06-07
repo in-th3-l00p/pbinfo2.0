@@ -67,7 +67,7 @@ function EvaluateButton({evaluation, setEvaluation, id, source, disabled=false, 
         newEvaluation.evaluating = true
         setEvaluation(newEvaluation)
 
-        fetch("http://localhost:5000/evaluate", {
+        fetch("/api/evaluate", {
             method: "post",
             body: JSON.stringify({
                 hash: id,
@@ -123,10 +123,10 @@ export default function Problema() {
     //URLs declared as constants for better access
     const searchParams = new URLSearchParams({ hash: id })
     const infoURL = (
-        "http://localhost:5000/getProblemInformations?" + searchParams
+        "/api/getProblemInformations?" + searchParams
     )
     const statementURL = (
-        "http://localhost:5000/getProblemStatement?" + searchParams
+        "/api/getProblemStatement?" + searchParams
     )
 
     //fetchinggg
